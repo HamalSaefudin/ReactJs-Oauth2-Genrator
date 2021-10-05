@@ -1,11 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { GoogleLogin } from 'react-google-login';
+
 
 function App() {
+  const responseGoogle = (x)=>{
+    console.log(x)
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <GoogleLogin
+        clientId="946102866816-gsc8adrd6504km72gcrns4al0o6q0adm.apps.googleusercontent.com"
+        buttonText="Login"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+      />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
